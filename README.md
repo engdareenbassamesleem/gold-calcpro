@@ -1,20 +1,27 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# GoldCalcPro
 
-# Run and deploy your AI Studio app
+A React and TypeScript portfolio interface that estimates gold value from a user-entered USD-per-gram rate, weight, selected purity and currency.
 
-This contains everything you need to run your app locally.
+## Implemented
 
-View your app in AI Studio: https://ai.studio/apps/03f6847a-42e6-4a0e-aec0-136e9d3044df
+- Interactive calculator with 24K, 22K, 21K and 18K options.
+- USD, QAR, EUR, GBP and AED display options.
+- Result cards, animated transitions and responsive layout.
+- Static example search-insight cards.
 
-## Run Locally
+## Run
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+Build: npm run build. Type check: npm run lint. No Gemini key is needed for the current calculator; calculations run in src/App.tsx.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Calculation and limitations
+
+The code multiplies the entered USD rate by a fixed purity factor and a hard-coded currency conversion factor, then multiplies by weight. Currency factors and the initial gold rate are demonstration values, not live data. Some interface copy says “live”; there is currently no market-data integration. Export PDF and upgrade buttons are presentation placeholders.
+
+This is a UI/calculation prototype. Before extending it, add input validation, tested calculation functions and a documented data-source integration.
+
+**Stack:** React 19, TypeScript, Vite, Motion and Lucide. The source of truth for scripts and dependencies is package.json.
